@@ -25,6 +25,10 @@ const config = {
         poppins: ["Poppins", "sans-serif"],
       },
       colors: {
+        bgLight: "#FF6700",
+        bgDark: "#1A202C",
+        txtLight: "",
+        txtDark: "",
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",

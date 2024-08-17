@@ -19,7 +19,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={cn(inter.className, "antialiased grainy min-h-screen bg-[#FF6700] dark:bg-[#1A202C]")}>
+      <body className={cn(inter.className, "antialiased grainy min-h-screen bg-white dark:bg-[#0d121c]")}>
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
