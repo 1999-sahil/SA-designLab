@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import { ThemeProvider } from "@/components/theme-provider";
+import { cn } from "@/lib/utils";
+import Navbar from "@/components/navigation/Navbar";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -15,8 +18,18 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
+    <html lang="en" suppressHydrationWarning>
+      <body className={cn(inter.className, "antialiased grainy min-h-screen bg-[#FF6700] dark:bg-[#1A202C]")}>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem={false}
+          storageKey="designlab-theme"
+        >
+          <Navbar />
+          {children}
+        </ThemeProvider>
+      </body>
     </html>
   );
 }
