@@ -1,7 +1,8 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
+import { usePathname, useRouter } from "next/navigation";
 
 import { BiMenuAltLeft } from "react-icons/bi";
 import { X } from "lucide-react";
@@ -16,23 +17,58 @@ import CustomButton from "@/components/custom-button";
 
 function Navbar() {
   const [open, setOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState("");
+  const router = useRouter();
 
+  const currentPath = usePathname(); // Get the current pathname
+
+  useEffect(() => {
+    const handleHashChange = () => {
+      const hash = window.location.hash || ""; // Get the hash from the URL
+      setActiveSection(hash);
+    };
+
+    window.addEventListener("hashchange", handleHashChange);
+    handleHashChange(); // Initial check on load
+
+    return () => {
+      window.removeEventListener("hashchange", handleHashChange);
+    };
+  }, [currentPath]);
+
+  const handleClick = (to: string) => {
+    const element = document.querySelector(to);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+      router.push(`${currentPath}${to}`); // Update URL with hash
+    }
+  };
+  
   const toggleMenu = () => {
     setOpen((prevOpen) => !prevOpen);
   };
 
   return (
-    <header className="fixed top-0 z-50 border-b w-full flex items-center justify-between px-4 md:px-12 py-2">
+    <header className="fixed top-0 z-[99999] bg-white dark:bg-[#0d121c] border-b w-full flex items-center justify-between px-4 md:px-12 py-2">
       {/** logo */}
       <div className="flex items-center gap-12 w-1/2">
         <Logo />
         {/** nav links */}
         <div className="hidden md:flex gap-3">
-          {navigationLinks.map((link, index) => (
-            <div key={index} className="flex capitalize cursor-pointer hover:bg-zinc-100 dark:hover:bg-[#142037] px-3 py-1.5 rounded-md font-poppins font-medium text-zinc-800 dark:text-zinc-300 text-sm">
-              <a href={link.to}>{link.title}</a>
-            </div>
-          ))}
+          {navigationLinks.map((link, index) => {
+            const isActive = activeSection === link.to;
+            
+            return (
+              <div
+                key={index}
+                onClick={() => handleClick(link.to)}
+                className={`flex capitalize cursor-pointer text-sm px-3 py-1.5 rounded-md font-poppins transition-all duration-200,
+                  ${isActive ? "bg-[#5FFB17] dark:bg-[#122650] hover:bg-none text-white" : "text-zinc-800 dark:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-[#142037]"}
+                `}>
+                <a href={link.to}>{link.title}</a>
+              </div>
+            );
+          })}
         </div>
       </div>
 

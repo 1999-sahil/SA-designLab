@@ -5,8 +5,10 @@ import Expertise from "@/components/skills/Expertise";
 
 export default function Home() {
   return (
-    <main className="top-[6rem] absolute">
-      <HeroSection />
+    <main className="top-[3.6rem] relative flex flex-col items-center justify-center overflow-hidden mx-auto">
+      <div className="w-full max-w-7xl">
+        <HeroSection />
+      </div>
     </main>
   );
 }
