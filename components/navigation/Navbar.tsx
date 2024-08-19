@@ -5,7 +5,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { usePathname, useRouter } from "next/navigation";
 
 import { BiMenuAltLeft } from "react-icons/bi";
-import { X } from "lucide-react";
+import { UserRoundSearch, X } from "lucide-react";
 
 import { navigationLinks } from "@/constants";
 import { containerVars, menuVars } from "@/constants/motion";
@@ -14,6 +14,8 @@ import { ModeToggle } from "@/components/mode-toggle";
 import Logo from "@/components/logo/Logo";
 import MobileNavLink from "@/components/navigation/MobileNavLink";
 import CustomButton from "@/components/custom-button";
+import MyButton from "../button";
+import Link from "next/link";
 
 function Navbar() {
   const [open, setOpen] = useState(false);
@@ -49,7 +51,7 @@ function Navbar() {
   };
 
   return (
-    <header className="fixed top-0 z-[99999] bg-white dark:bg-[#0d121c] border-b w-full flex items-center justify-between px-4 md:px-12 py-2">
+    <header className="fixed border-b top-0 z-[99999] bg-white dark:bg-[#0d121c] w-full flex items-center justify-between px-4 md:px-12 py-2">
       {/** logo */}
       <div className="flex items-center gap-12 w-1/2">
         <Logo />
@@ -63,7 +65,7 @@ function Navbar() {
                 key={index}
                 onClick={() => handleClick(link.to)}
                 className={`flex capitalize cursor-pointer text-sm px-3 py-1.5 rounded-md font-poppins transition-all duration-200,
-                  ${isActive ? "bg-[#5FFB17] dark:bg-[#122650] hover:bg-none text-white" : "text-zinc-800 dark:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-[#142037]"}
+                  ${isActive ? "bg-[#5FFB17] dark:bg-[#122650] hover:bg-none text-black dark:text-white" : "text-zinc-800 dark:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-[#142037]"}
                 `}>
                 <a href={link.to}>{link.title}</a>
               </div>
@@ -75,7 +77,15 @@ function Navbar() {
       {/** resume */}
       <div className="hidden md:flex items-center justify-center gap-4">
         <ModeToggle />
-        <CustomButton text="Resume" />
+        <Link href="/resume">
+          <h2 className="underline underline-offset-2 text-sm font-poppins font-medium">Resume</h2>
+        </Link>
+        <Link href="" className="inline-flex overflow-hidden text-white dark:text-zinc-800 bg-zinc-800 dark:bg-white rounded-md group">
+          <span className="px-2 text-white bg-[#5FFB17] group-hover:bg-[#4cdc09] flex items-center justify-center">
+            <UserRoundSearch className="w-4 h-4" />
+          </span>
+          <span className="px-3 py-1.5 text-sm font-poppins">Hire Me</span>
+        </Link>
       </div>
 
       {/** mobile mode */}
@@ -122,7 +132,14 @@ function Navbar() {
               })}
 
               {/** resume button */}
-              <CustomButton text="Resume" />
+              <div className="w-full flex items-center justify-center my-2">
+                <Link href="" className="inline-flex w-3/4 overflow-hidden text-white dark:text-white bg-zinc-800 dark:bg-zinc-600 rounded-md group">
+                  <span className="px-5 py-2 text-white bg-[#5FFB17] group-hover:bg-[#4cdc09] flex items-center justify-center">
+                    <UserRoundSearch className="w-6 h-6" />
+                  </span>
+                  <span className="px-3 py-1.5 text-lg font-bold text-center flex items-center justify-center font-poppins">Hire Me</span>
+                </Link>
+              </div>
             </motion.div>
           </motion.div>
         )}
