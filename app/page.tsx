@@ -1,4 +1,5 @@
 import HeroSection from "@/components/banner/HeroSection";
+import ProfileTagMarquee from "@/components/banner/ProfileTagMarquee";
 import Footer from "@/components/footer/Footer";
 import Work from "@/components/projects/Work";
 import Expertise from "@/components/skills/Expertise";
@@ -9,6 +10,7 @@ export default function Home() {
       <div className="w-full max-w-7xl">
         <HeroSection />
       </div>
+      <ProfileTagMarquee />
     </main>
   );
 }
