@@ -96,3 +96,11 @@ html, body {
     border-bottom: 0px;
   }
 }
+
+.svg-dark-mode path {
+  fill: #e3e3e3;
+}
+
+.svg-light-mode path {
+  fill: #333;
+}

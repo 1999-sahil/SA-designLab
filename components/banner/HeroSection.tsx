@@ -94,28 +94,3 @@ function HeroSection() {
 }
 
 export default HeroSection;
-
-
-{/**
-  
-  
-  <div className="w-full md:w-1/4 flex flex-row md:flex-col gap-2 items-center justify-between bg-pink-500">
-          <div className="relative aspect-square flex items-center justify-center w-1/2 md:w-full bg-red-600">
-            <Image
-              src={rightImage}
-              alt="right-image"
-              fill
-              objectFit="cover"
-              className="rounded-2xl border"
-            />
-          </div>
-          <div className="w-1/2 md:w-full h-[250px] md:h-[150px] flex flex-col gap-6 items-center justify-center border p-4 border-zinc-900 rounded-2xl">
-            <span className="text-start font-poppins font-bold text-xl">
-              Let&apos;s develop something big together
-            </span>
-            <span className="text-start font-poppins font-medium text-base">
-              First, solve the problem. Then, write the code.
-            </span>
-          </div>
-        </div>
-  */}
