@@ -14,7 +14,7 @@ function HeroSection() {
   return (
     <div
       id="heroSection"
-      className="mt-10 max-md:px-4 flex flex-col gap-5 items-center justify-center max-w-screen-xl w-full"
+      className="gridLinesBg pt-10 max-md:px-4 flex flex-col gap-5 items-center justify-center w-full"
     >
       {/** heading and buttons */}
       <div className="flex flex-col gap-5 items-center justify-center">
@@ -49,7 +49,7 @@ function HeroSection() {
       </div>
 
       {/** hero images */}
-      <div className="flex flex-col gap-2 w-full md:px-8 h-fit md:flex-row items-center justify-center">
+      <div className="flex flex-col gap-2 w-full pb-8 md:px-8 h-fit md:flex-row items-center justify-center">
         {/** left image */}
         <div className="w-full md:w-3/4 h-[250px] md:h-[350px] relative aspect-square flex items-center justify-center border dark:border-zinc-500 rounded-2xl">
           <Image

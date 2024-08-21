@@ -133,7 +133,7 @@ function Navbar() {
 
               {/** resume button */}
               <div className="w-full flex items-center justify-center my-2">
-                <Link href="" className="inline-flex w-3/4 overflow-hidden text-white dark:text-white bg-zinc-800 dark:bg-zinc-600 rounded-md group">
+                <Link href="" className="inline-flex w-3/4 overflow-hidden text-white dark:text-black bg-[#333] dark:bg-[#e3e3e3] rounded-md group">
                   <span className="px-5 py-2 text-white bg-[#5FFB17] group-hover:bg-[#4cdc09] flex items-center justify-center">
                     <UserRoundSearch className="w-6 h-6" />
                   </span>
