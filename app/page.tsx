@@ -12,11 +12,14 @@ export default function Home() {
         <HeroSection />
       </div>
       <ProfileTagMarquee />
-      <div className="w-full max-w-7xl md:px-8 my-10">
+      <div className="w-full flex flex-col items-center justify-center max-w-7xl md:px-8 my-10">
         <Skills />
+        <div className="w-full md:max-w-5xl max-lg:p-8 my-[5rem]">
+          <Expertise />
+        </div>
       </div>
-      <div className="w-full md:max-w-5xl max-lg:p-8 my-[5rem]">
-        <Expertise />
+      <div className="w-full max-w-7xl px-8 mb-[5rem]">
+        <Work />
       </div>
     </main>
   );
