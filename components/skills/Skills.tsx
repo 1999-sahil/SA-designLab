@@ -24,7 +24,7 @@ function Skills() {
           Technologies.
         </span>
       </div>
-      <div className="w-full h-full grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
+      <div className="w-full h-full mt-8">
         <CardOne />
         <CardTwo />
         <CardThree />
@@ -96,7 +96,7 @@ function CardTwo() {
 
 function CardThree() {
   return (
-    <div className="w-full h-full p-4 flex justify-between bg-black border border-[#333] rounded-lg">
+    <div className="w-full h-full p-4 flex justify-between bg-black border border-[#333] rounded-lg mt-6">
       {/** text */}
       <div className="w-1/2 flex flex-col justify-between items-start">
         <span className="flex flex-col font-poppins font-bold text-lg md:text-xl text-black px-[2px]">

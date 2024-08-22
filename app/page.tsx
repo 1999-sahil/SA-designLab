@@ -18,9 +18,10 @@ export default function Home() {
           <Expertise />
         </div>
       </div>
-      <div className="w-full max-w-7xl px-8 mb-[5rem]">
+      <div className="w-full px-8 mb-[5rem]">
         <Work />
       </div>
+      <Footer />
     </main>
   );
 }
