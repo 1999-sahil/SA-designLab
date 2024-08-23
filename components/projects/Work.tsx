@@ -12,8 +12,11 @@ import darkImg from "@/assets/darkArrow.svg";
 function Work() {
   return (
     <div id="work" className="w-full h-full">
-      <div className="flex flex-col gap-8 items-center justify-center mb-5 px-20">
-        <h2 className="text-4xl font-poppins font-bold text-center">Imagination Trumps Knowledge!</h2>
+      <div className="flex flex-col w-full gap-8 items-center justify-center mb-5 md:px-20">
+        <div className="text-4xl flex flex-col font-poppins font-bold text-center">
+          <h2>Imagination Trumps</h2>
+          <h2>Knowledge</h2>
+        </div>
         <div className="flex flex-col md:flex-row gap-4 items-center mb-8">
           <span className="bg-[#5FFB17] text-xl text-black text-center font-montserrat font-semibold p-1 rounded whitespace-nowrap">
             My Recent Work

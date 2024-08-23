@@ -7,7 +7,7 @@ import { expertise } from '@/constants/svg';
 function Expertise() {
 
   return (
-    <div id="expertise" className="relative w-full h-full p-10 bg-zinc-200 dark:bg-gray-900 border-2 border-zinc-400 dark:border-zinc-500 border-dashed rounded-xl">
+    <div className="relative w-full h-full p-10 px-20 bg-zinc-200 dark:bg-gray-900 border-2 border-zinc-400 dark:border-zinc-500 border-dashed rounded-xl">
       <CircleIcon className="absolute -right-[2px] -top-[2px]" />
       <CircleIcon className="absolute -bottom-[2px] -right-[2px]" />
       <CircleIcon className="absolute -left-[2px] -top-[2px]" />

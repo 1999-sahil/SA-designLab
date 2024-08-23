@@ -8,27 +8,50 @@ import Frontend from "@/assets/frontend.png";
 import Fullstack from "@/assets/fullstack.png";
 import Design from "@/assets/design.png";
 import Program from "@/assets/program.png";
+import { cardData } from "@/constants";
+import LearnMore from "./LearnMore";
 
 function Skills() {
   return (
-    <div className="w-full h-full flex flex-col gap-5 max-md:px-4 px-20">
+    <div id="expertise" className="w-full h-full flex flex-col gap-5 md:px-20">
       {/** text */}
       <div className="flex flex-col md:flex-row items-center gap-6 mb-4">
         <span className="bg-[#5FFB17] text-xl text-black text-center font-montserrat font-semibold p-1 rounded whitespace-nowrap">
           Technical Skills
         </span>
-        <span className="text-sm max-md:text-center font-poppins text-[#333] dark:text-[#e3e3e3]">
+        <span className="text-sm w-full md:w-1/2 text-center md:text-start font-poppins text-[#333] dark:text-[#e3e3e3]">
           My technical skills which consist practices of Full-Stack Development,
           Database Management, Responsive Design, Theme Management, Component
           Architecture, SVG and Image Optimization, Error Handling, Modern Web
           Technologies.
         </span>
       </div>
-      <div className="w-full h-full mt-8">
-        <CardOne />
-        <CardTwo />
-        <CardThree />
-        <CardFour />
+      <div className="mt-8 w-full grid grid-cols-1 md:grid-cols-2 gap-6">
+        {cardData.map((card, index) => {
+          return (
+            <div
+              key={index}
+              className={`rounded-xl w-full border flex items-center justify-between py-4 border-b-4 border-b-black
+                ${card.borderColor} ${card.bgColor}
+              `}
+            >
+              <div className={`w-1/2 flex flex-col h-full pl-4 justify-center `}>
+                <div className={`${card.textColor}`}>
+                  <h2 className={`font-poppins font-semibold text-lg md:text-xl px-2 w-fit ${card.fgColor}`}>{card.title}</h2>
+                  <h2 className={`font-poppins font-semibold text-lg md:text-xl px-2 w-fit ${card.fgColor}`}>{card.title2}</h2>
+                </div>
+              </div>
+              <div className="w-1/2">
+                <Image
+                  src={card.image}
+                  alt={card.title}
+                  width={200}
+                  height={200}
+                />
+              </div>
+            </div>
+          )
+        })}
       </div>
     </div>
   );
